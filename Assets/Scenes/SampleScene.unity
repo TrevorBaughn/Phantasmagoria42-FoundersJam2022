@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77623f1818c2624a9c13eabf4237d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 939763927}
+  Player: {fileID: 939763927}
   _crowPrefab: {fileID: 6846397839007632102, guid: 88f3a03ad520285439759b93d4abf712, type: 3}
   Crows: []
   _numberOfCrowsToSpawn: 3

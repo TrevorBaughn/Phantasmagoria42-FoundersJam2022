@@ -16,7 +16,9 @@ public class HealthController : MonoBehaviour
     bool _delayedDeath;
     [SerializeField]
     float _deathTime;
-    
+    [SerializeField]
+    ParticleSystem _particleSystem;
+
     private void Awake()
     {
         CurrentHealth = _maxHealth;
@@ -35,6 +37,11 @@ public class HealthController : MonoBehaviour
         {
             // Call the die function.
             StartCoroutine( Die());
+        }
+
+        if(_particleSystem != null)
+        {
+            _particleSystem.Play();
         }
 
     }
