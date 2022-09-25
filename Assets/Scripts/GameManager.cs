@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    Transform _player;
+    public Transform Player;
     [SerializeField]
     AIController _crowPrefab;
    public List<AIController> Crows = new List<AIController>();
@@ -29,7 +28,7 @@ class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+           // DontDestroyOnLoad(this.gameObject);
         }
 
         else
@@ -41,11 +40,11 @@ class GameManager : MonoBehaviour
     private void Update()
     {
         // If the number of crows is less than the number of crows to spawn...
-        if(Crows.Count < _numberOfCrowsToSpawn)
+        if(Crows.Count < _numberOfCrowsToSpawn && SceneManager.GetActiveScene().name == "SampleScene")
         {
             // Spawn the crow at the random spawnpoint and add it to the list of crows.
             AIController __newCrow = Instantiate(_crowPrefab, _spawnTransforms[_crowSpawnIndex].position, Quaternion.identity);
-            __newCrow.PlayerTransform = _player;
+            __newCrow.PlayerTransform = Player;
             Crows.Add(__newCrow);
 
             if ((_crowSpawnIndex + 1) < _spawnTransforms.Length)
@@ -54,9 +53,9 @@ class GameManager : MonoBehaviour
                 _crowSpawnIndex = 0;
         }
 
-        //if(_player == null)
-        //{
-        //    SceneManager.LoadScene("TitleScreen");
-        //}
+        if(Player == null)
+        {
+            SceneManager.LoadScene("Title Scene");
+        }
     }
 }

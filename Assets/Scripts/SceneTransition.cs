@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SceneTransition: MonoBehaviour
 {
     public string Transition;
 
     // Start is called before the first frame update
     void Start()
     {
-        LoadLevel();
     }
 
     // Update is called once per frame

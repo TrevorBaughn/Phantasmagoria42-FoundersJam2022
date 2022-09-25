@@ -43,4 +43,9 @@ public class PlayerInput : MonoBehaviour
             _gun.Shoot(transform.right);
         }
     }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.Player = null;
+    }
 }
