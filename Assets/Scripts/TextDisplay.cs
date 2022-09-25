@@ -12,7 +12,7 @@ public class TextDisplay : MonoBehaviour
     public string[] random = new string[1];
     public int debugIndex = 0;
     public int killsPerMessage = 25;
-    public int messageDelay = 2000;
+    public int messageDelay = 3500;
     int x = 0;
     bool displayed = false;
 

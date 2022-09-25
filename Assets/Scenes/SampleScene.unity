@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 176079794}
   - component: {fileID: 176079793}
   m_Layer: 0
-  m_Name: Paralax Background
+  m_Name: Parallax Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,6 +375,11 @@ Transform:
   m_Father: {fileID: 1846057787}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &284271779 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9189219974673684672, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+  m_PrefabInstance: {fileID: 1999479234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +391,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -459,6 +465,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &594875339
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +666,403 @@ Transform:
   m_Father: {fileID: 1846057787}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1055664986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055664988}
+  - component: {fileID: 1055664987}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1055664987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055664986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77623f1818c2624a9c13eabf4237d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kills: 0
+--- !u!4 &1055664988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055664986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 396.35495, y: 422.35754, z: 0.8162353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1088061564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088061565}
+  - component: {fileID: 1088061568}
+  - component: {fileID: 1088061567}
+  - component: {fileID: 1088061566}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1088061565
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088061564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 284271779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0062256, y: 429.94}
+  m_SizeDelta: {x: 2142.4, y: 215.52}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1088061566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088061564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd8ceeb701071846a301bf7521d5378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1088061567}
+  intro:
+  - On this day, April 13th, 1942, a cocoon stands empty.
+  - Once inhabited by your worm-like predecessor, it has now been evacuated by you,
+    Butter Fly XIV.
+  - You come from a long lineage of butterflies, all determined to make it to the
+    forbidden promised land.
+  - Will you make it?
+  - Past the birds, the branches, and the obstacles that lie ahead... can you be
+    the butterfly who could?
+  - Filled with bravery... or foolish optimism... you fly away.
+  random:
+  - "That wind... it feels like... freedom!\\nNo, no... that\u2019s just harmful
+    chemicals."
+  - "Are the birds getting bigger?\\nYou\u2019re sure they are... they\u2019ll overtake
+    the humans, soon.\\nYes... quite soon."
+  - "If you look down, you can see where you\u2019d die...\\nBut you won't.\\nNot
+    yet."
+  - "You are a butterfly shooting at crows with bullets...\\nI\u2019ll let you ruminate
+    on that.\\nHow do you feel?"
+  - Oh, Crow, feathered bro, very much so, a pile of... like... innards, y'know?\nYou
+    killed a bird; you get the point.
+  - You are a well-oiled machine.\nGirl-butterflies want you; Crows fear you.
+  - "In the distance... it\u2019s a... a factory!\\nNot where you\u2019re going,
+    hopefully..."
+  - "You know, you\u2019ve come far.\\nYou were a worm only a few birds ago, but
+    now?\\nYou\u2019re a butterfly.\\nYou see no god up here, but for yourself!"
+  - "So, where do the bullets come from...?\\nYou do know, right?\\nWell, don\u2019t
+    look at me! I have no clue..."
+  - While they were out wriggling, you studied the wings.\nWhile they were out having
+    pre-cocoonal adventures, you were learning to dodge.\nWhen they wasted their
+    days in pursuit of food... you studied the BULLET.\nAnd now, when the world is
+    coated in smog, and the people are swinging their nets, they dare to come to
+    you for salvation?
+  - "Why do these crows always want to eat you?\\nDon\u2019t they have literally
+    anything better to do with their time?"
+  - "You\u2019ll get there soon, young one... soon..."
+  - One of those crows was just... standing there... MENACINGLY!
+  - "Do you ever wonder what happened with the development of Shower 2: Electric
+    Boogaloo?\\nOh, you wouldn\u2019t know what that is..."
+  - "What if we could just... take your destination... and move it over here?\\nNo,
+    no... then the journey would be lost, and isn\u2019t that all that matters?"
+  - "I don\u2019t mean to get political, but... What's your problem with birds?\\nWhat,
+    just because they\u2019re big, scary, and could eat you... it doesn\u2019t mean
+    they will.\\nAnd you just gun them down? Just like that?\\nYou\u2019re probably
+    doing it right now... You\u2019re an ornithophobe, you."
+  - "You know what would break up the pace a little? Some i m a g i n a t i o n\\n\\nAlright,
+    that\u2019s enough of that now.\\nWe don\u2019t want too much imagination.\\nThis
+    is a serious game, after all.\\nAbout serious issues.\\nLike the American Dream,
+    and Japan, and... look, this is meant to be show, not tell, so how about you...
+    you... flutter off!"
+  - "Do you ever feel like a butterfly, drifting through the wind, wanting to start
+    again...?\\nWell, I would suppose that\u2019s an accurate description of you,
+    actually."
+  - "Have you gotten the secret butterfly achievement yet?\\nWhat? Of course, this
+    game has achievements \u2013 what reputable game wouldn\u2019t?!"
+  - "Did you know that you can use the arrow keys to move and space to shoot?\\nWell,
+    come to think of it, you probably do, but it doesn\u2019t hurt to make sure.\\nI
+    mean, I can\u2019t exactly see what you\u2019re doing right now.\\nIs it possible
+    that like a monkey typing up Shakespeare, you have just managed to get this far
+    into the game without pushing a single button?\\nWell, that would be quite some
+    luck..."
+  - Is this a pigeon?
+  - "Do you ever wonder if the thing you\u2019re going toward is a lamp?\\nWhat?
+    Butterflies aren\u2019t moths?\\nWell, of course, they are, aren\u2019t they?\\nWhat
+    do you mean, me lumping you all together is very insectophobic?"
+  - "We should talk more about the themes of this journey, like the American Dream.\\nYou\u2019re
+    always moving, always dodging, and always attacking.\\nAlways trying to get somewhere
+    that isn\u2019t here...\\nYou\u2019re a stand-in for the working class American,
+    unable to cope with the failures of the system!\\nI guess mother nature is the
+    system in this context?\\nIt still needs to be ironed out..."
+  - Why butterflies suck:\n$0 annual income, CEO of nothing, flutter-flutter mentality,
+    zero networking skills, under 6 feet tall...\nGo lift some weights, invest in
+    the stock market, and then talk to me.
+  - You know, there could be a better name for this journey of ours...\nUntitled
+    Butter Fly?\nNo, no... disregard.
+  - Hey... if you get sick...\nDo you have the butter flu? No? OK, sorry-
+  - "So, is the Hungry Caterpillar accurate to real life?\\nWhat do you mean that\u2019s
+    insensitive?"
+  - "The crows die for your sins...\\nYou may never make it to your forbidden promised
+    land...\\nAll this mangled mass of feathers and viscera...\\nI ask for the first
+    time, or for a second...\\nHow do you feel?\\nHa! You should have seen the look
+    on your face! This isn\u2019t a horror game, you doof."
+  - Let the bodies hit the floor, let the bodies hit the floor, let the bodies hit
+    the...\nFLOOOOOOOOOOOOOR
+  - "This has been quite a journey so far, hasn\u2019t it?\\nBirds... tree branches...
+    gunfire. These things all go together."
+  - "Do you know where you\u2019re going? The destination.\\nCan you imagine if it
+    wasn\u2019t real? That would be such a copout..."
+  - "What did you do before you were a butterfly?\\nI like to imagine that you had
+    a nice cottage somewhere underneath a leaf or something.\\n\\nThat\u2019s not
+    just a thing in the movies, is it?\\nBugs do that in real life too, don\u2019t
+    they?"
+  - "Oh! Be careful of that rain, will you?\\nIt\u2019s all about the journey, and
+    the journey\u2019s over if you get absolutely destroyed by the spring showers."
+  - Is it true that you can flip your wings to cause a typhoon across the earth?\nThere
+    would be a lot of typhoons starting by now if that were the case...
+  - "Hey, hey \u2013 what happens when a stress-eating crow is nervous?\\nThey get
+    butterflies in their stomach!\\nOK, fair reaction."
+  - Hey... do you know what you should say when you see a crow?\nYou should say "Oh
+    no! I butter fly away."\nNo? No one appreciates puns anymore.
+  - "If you had friends, you\u2019d be quite the... social butterfly!\\nI\u2019m
+    quite proud of that one."
+  - "Do you believe in reincarnation?\\nYou could\u2019ve been a human fighter pilot
+    or something.\\nThere is a war going, after all..."
+  - How can you be sure you came from a cocoon,\nrather than someone throwing a stick
+    of butter out of a window,\nirresponsibly giving life and confusion to a new
+    being?
+  - "*Cough* *Cough* That smog is bad, huh?\\nDo butterflies have respirators?\\nNo,
+    I guess they wouldn\u2019t..."
+  - "Smell that factory air?\\nCars, tanks, guns... doesn't matter what they\u2019ve
+    got to put in the air, does it?"
+  - You know, I wonder, was it always like this?\nThe air? The trees? The water?\nWas
+    it always so... contaminated? Do you remember the time before?
+  - They say you used to be able to see miles of mountain range up there before all
+    the smog.\nWeird, huh?
+  - "You see that cloud? Trying to act all cool?\\nToo bad he\u2019s just smog, huh?
+    Huh? Please laugh-"
+  - "The smog is getting so bad in some places that they can\u2019t read their clocktowers
+    anymore.\\nGuess you could say that... they\u2019re running out of time?"
+  - "You know, they may develop nuclear energy to fix all this smog someday.\\nMe?
+    I\u2019d say to never trust an atom.\\nThey make up literally everything!"
+  - "The weather sure is smoky, huh?\\nGet it? Because of the smoke?\\nYeah, I can\u2019t
+    breathe either..."
+  - "The smog obscures your vision...\\nYou can\u2019t see... all is lost.\\nThe
+    promised land becomes just a little more forbidden.\\nIt was all such a waste,
+    wasn\u2019t it?\\nThe journey? Why did you ever leave...\\nWas it about glory?
+    Was it about honor?\\nWas any of it worth where you are now?\\nHey. Don\u2019t
+    look so down \u2013 I was joking.\\nThis isn\u2019t that kind of journey.\\nIt\u2019s
+    just a bit of fun."
+  - "Maybe this smog is a good thing \u2013 it adds atmosphere, don\u2019t you think?\\nOr...
+    I guess it also destroys the atmosphere."
+  - "I wonder, do your kind know of what\u2019s going on out there?"
+  - "The Americans will be here to save us soon!\\nThat\u2019s just something people
+    like to say in these times."
+  - "Yeah, get them for what they did to London!\\nCrows have been a huge issue in
+    London lately, as I\u2019m sure you know."
+  - "What do you call a fascist fish?\\nAdolfin!\\nYou don\u2019t have any fish friends,
+    do you?"
+  - "What do you call a fascist bug?\\nBenito Mosquitollini!\\nI know you\u2019re
+    an insect, but even you have to admit that that\u2019s a good one-"
+  - "Do you hear the sirens?\\nThey\u2019re not for you, but take them as a sign
+    that you should hurry..."
+  - So much destruction everywhere...\nDo you even remember why?
+  - "On your feet, soldier.\\nWe\u2019re not done until every last crow in your path
+    is out of it."
+  - Thank you for your service.
+  - You ever wonder what it means to wake up from the American Dream?
+  - Is there a butterfly equivalent of the American Dream?\nThe Insectoid Plot? Sounds
+    about right...
+  - '"Keep heading towards your goal.\nFind the end of this and cash in those butterfly
+    war bonds...'
+  - "Get a job, deadbeat.\\nKidding \u2013 pursue... whatever it is you\u2019re after."
+  - Have you invested in your 401K?
+  - "It\u2019s about drive, power, and the urge not to be devoured."
+  - "Don\u2019t let your memes be dreams... A great philosopher said that."
+  - "You want to go play sports ball and drink some fluids at the bar?\\nYeah, I
+    don\u2019t understand what Death of a Salesman was about either..."
+  - "What you\u2019re after... do you think it\u2019s worth all of this?\\n\"What
+    am I saying? Of course it is \u2013 you want to see the numbers go up.\\nThen
+    you\u2019ll be happy..."
+  - "When are you going to find yourself a nice lady-butterfly to settle down with?\\nYou
+    don\u2019t have as much time as you think..."
+  - Do a barrel roll!
+  - "You know that crow\u2019s probably going through a divorce...\\nOr at least
+    it will be, forcibly, once you're done with it."
+  - "There\u2019s a seven on your six."
+  - "There\u2019s a bogey on your twelve."
+  - "Houston, we have a problem!\\nOkay, maybe I\u2019m a couple decades early with
+    that reference."
+  - "Woah! Be careful, you don\u2019t want to crash!"
+  - "You\u2019re pretty high up \u2013 how are you on motion sickness?"
+  - How many Gs are you experiencing right now?
+  - Do you even have a flying license?
+  - There is no society, and I refuse to elaborate.
+  - Whatever happened to the good old days?
+  - You know, crows are smart creatures.\nMessing with you was a bad idea, though.
+  - These feathery fools... worst bird archetype.
+  - "Crows aren\u2019t very trustworthy.\\nEven the Romans knew that.\\nThey say
+    crows look like that because they took \u2018liar, liar, pants on fire\u2019
+    to a very literal level."
+  - We should give some of these crows names.\nThat one can be Steven Crow Durr.
+  - Bet that crow had a family.\nHe could be related to David Crow-nenberg.
+  - What do you call a crow at happy hour? A crow-bar.
+  - "Who was Zeus\u2019s father? Crow-nos."
+  - Are we there yet?
+  - What do you call a shiny bird? Crow-m.
+  - "Woah! That crow could\u2019ve been the physicist who discovered caws and effect!"
+  - Crow see. Crow destroy.\nCrow have bullets. You have bullets.\nSuch is the way
+    of war...
+  - Dang - that shot right there was just plane wrong!
+  - If you were fighting chickens instead of crows, would they be cockpits?
+  - "What\u2019s your favorite day of the week? Is it... Flyday?"
+  - "With the amount of dead crows, it\u2019s looking like Flyday the 13th."
+  - "Woah, woah! That poor crow! He could\u2019ve gone to cawllege!"
+  - That crow could have been your wingman...
+  - Are you a birderer?
+  - So... do butterflies have jetfuel, or...?
+  - Croh no!
+  - Was that Wood-crow Wilson?\nWait no, that was World War 1...
+  - Too bad this wasn't springy ninjas...\nWait, you wouldn't get that.
+  debugIndex: 0
+  killsPerMessage: 25
+  messageDelay: 3500
+--- !u!114 &1088061567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088061564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Text Box
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 20, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1088061568
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088061564}
+  m_CullTransparentMesh: 1
 --- !u!1 &1502828558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1776,10 @@ PrefabInstance:
     - target: {fileID: 9189219974673684672, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 9189219974673684684, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
       propertyPath: m_Name
