@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
     // How long the bullet exists in the scene before it despawns.
     [SerializeField]
     float _lifeTime;
+    [HideInInspector]
+    public Vector3 MovementDirection;
 
     //The time when the bullet respawns.
     float _timeToDie;
@@ -25,7 +27,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.right * _movementSpeed * Time.deltaTime;
+        transform.position += MovementDirection * _movementSpeed * Time.deltaTime;
 
         // If the time since the start of the game is greater than or equal to the death time...
         if (Time.time >= _timeToDie)
@@ -38,7 +40,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // If the thing we collided with has a health controller component...
-        if(TryGetComponent<HealthController>(out HealthController healthController))
+        if(collision.gameObject.TryGetComponent<HealthController>(out HealthController healthController))
         {
             // Tell it to take damage.
             healthController.TakeDamage(Damage);
