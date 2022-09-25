@@ -44,8 +44,6 @@ public class TextDisplay : MonoBehaviour
             textMesh.text = text;
             await Task.Delay(messageDelay);
         }
-
-        textMesh.text = "";
     }
 
     public async void DisplayRandom()
@@ -55,13 +53,13 @@ public class TextDisplay : MonoBehaviour
             random = Shuffle<string>(random);
             x = 0;
         }
+
         foreach (string text in random[x].Split("\\n"))
         {
             textMesh.text = text;
             await Task.Delay(messageDelay);
         }
 
-        textMesh.text = "";
         x++;
     }
 
