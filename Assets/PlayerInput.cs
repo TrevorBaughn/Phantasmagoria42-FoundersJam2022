@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     // Desired movement velocity based on the inputs recieved.
     Vector2 _desiredVelocity;
     MovementController _movementController;
+    ButterflyGun _gun;
 
     // Awake is called when the object is first created in the scene and before the first frame it appears in the game. Good for setting variables needed at the start of this script's life time.
     void Awake()
@@ -16,7 +17,8 @@ public class PlayerInput : MonoBehaviour
         _desiredVelocity = new Vector2();
         // If the movement controller is on this object, set a reference to it.
         TryGetComponent<MovementController>(out _movementController);
-
+        // If the butterfly gun is on this object, set a reference to it.
+        TryGetComponent<ButterflyGun>(out _gun);
     }
 
     // Update is Unity callback function that is called once per frame. Great for grabbing inputs from the player or managing animations that are needed to be check on a frame to frame basis.
@@ -33,6 +35,12 @@ public class PlayerInput : MonoBehaviour
         {
             // Move us in our desired direction.
             _movementController.Move(_desiredVelocity.normalized);
+        }
+        // If we press the space bar or we recieve input from the Fire1 axis and if we have a reference to our gun...
+        if ((Input.GetAxis("Fire1")) > 0.1f && _gun != null)
+        {
+            Debug.Log("Shoot");
+            _gun.Shoot();
         }
     }
 }
