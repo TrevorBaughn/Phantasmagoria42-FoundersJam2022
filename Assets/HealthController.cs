@@ -10,6 +10,11 @@ public class HealthController : MonoBehaviour
     // The current health.
     float _currentHealth;
 
+    private void Awake()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     /// <summary>
     /// Reduces this health controller's current health value by set damage.
     /// </summary>

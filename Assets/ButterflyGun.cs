@@ -24,13 +24,16 @@ public class ButterflyGun : MonoBehaviour
     }
 
     // Shoots the projectile prefab and starts the delay timer.
-    public void Shoot()
+    public void Shoot(Vector2 shootDirection)
     {
         // If we can shoot...
         if (_canShoot == true)
         {
+
             // Instaniate the prefab at the firepoint position.
-            Instantiate(_projectilePrefab, _firePoint.position, Quaternion.identity);
+            var newProjectile = Instantiate(_projectilePrefab, _firePoint.position, Quaternion.identity);
+
+            newProjectile.MovementDirection = shootDirection.normalized;
 
             // Set can shoot to false.
             _canShoot = false;

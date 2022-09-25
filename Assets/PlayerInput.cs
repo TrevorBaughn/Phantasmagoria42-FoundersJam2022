@@ -40,7 +40,7 @@ public class PlayerInput : MonoBehaviour
         if ((Input.GetAxis("Fire1")) > 0.1f && _gun != null)
         {
             Debug.Log("Shoot");
-            _gun.Shoot();
+            _gun.Shoot(transform.right);
         }
     }
 }
