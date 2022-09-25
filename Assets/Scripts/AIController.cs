@@ -23,10 +23,12 @@ public class AIController : MonoBehaviour
 
     [SerializeField]
     float _diveBombDamage;
+    [SerializeField]
+    AudioClip diveBombSound;
 
     MovementController _movementController;
     ButterflyGun _gun;
-
+    AudioSource _audioSource;
     Vector3 _diveToPosition;
 
     // Start is called before the first frame update
@@ -34,6 +36,7 @@ public class AIController : MonoBehaviour
     {
         TryGetComponent<MovementController>(out _movementController);
         TryGetComponent<ButterflyGun>(out _gun);
+        TryGetComponent<AudioSource>(out _audioSource);
     }
 
     // Update is called once per frame
@@ -102,6 +105,16 @@ public class AIController : MonoBehaviour
         // If we're Divebombing...
         else if (_currentState == AIState.Divebombing)
         {
+            // If we have an audio source...
+            if (_audioSource != null)
+            {
+                // Set the divebomb sound in the audio source.
+                if (_audioSource.clip != diveBombSound)
+                    _audioSource.clip = diveBombSound;
+                // Play the sound.
+                if (_audioSource.isPlaying == false)
+                    _audioSource.Play();
+            }
             // Calculate the movement direction.
             var __moveToDirection = _diveToPosition - transform.position;
             __moveToDirection.Normalize();
@@ -120,7 +133,8 @@ public class AIController : MonoBehaviour
                 {
                     ChangeState(AIState.Charging);
                 }
-
+                if (_audioSource != null)
+                    _audioSource.Stop();
             }
         }
         // If we're shooting...

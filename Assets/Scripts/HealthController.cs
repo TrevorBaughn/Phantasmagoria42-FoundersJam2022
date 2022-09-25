@@ -9,7 +9,9 @@ public class HealthController : MonoBehaviour
     float _maxHealth;
     // The current health.
     float _currentHealth;
-
+    [SerializeField]
+    AudioClip _deathSoundClip;
+    
     private void Awake()
     {
         _currentHealth = _maxHealth;
@@ -29,12 +31,20 @@ public class HealthController : MonoBehaviour
             // Call the die function.
             Die();
         }
+
     }
     /// <summary>
     /// Handles the death functionality.
     /// </summary>
     void Die()
     {
+        if(TryGetComponent<AudioSource>(out AudioSource audioSource))
+        {
+            audioSource.Stop();
+        }
+
+        AudioSource.PlayClipAtPoint(_deathSoundClip, transform.position);
+
         // Destroys this game object.
         Destroy(this.gameObject);
     }
