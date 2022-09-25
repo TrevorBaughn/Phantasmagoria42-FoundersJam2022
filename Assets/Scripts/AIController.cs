@@ -76,8 +76,6 @@ public class AIController : MonoBehaviour
         // If we're in the Charging state...
         else if (_currentState == AIState.Charging)
         {
-           
-
             // If we have a movement controller...
             if (_movementController != null)
             {
@@ -106,6 +104,7 @@ public class AIController : MonoBehaviour
         {
             // Calculate the movement direction.
             var __moveToDirection = _diveToPosition - transform.position;
+            __moveToDirection.Normalize();
             // Move to the dive to position.
             transform.position += __moveToDirection * _diveBombSpeed * Time.deltaTime;
 
@@ -137,6 +136,7 @@ public class AIController : MonoBehaviour
             // If our distance from the player to this crow is within the dive bomb range...
             if (Vector2.Distance(_playerTransform.position, transform.position) <= _diveBombRange)
             {
+                _diveToPosition = _playerTransform.position;
                 // Change our state to the shooting state.
                 ChangeState(AIState.Divebombing);
             }

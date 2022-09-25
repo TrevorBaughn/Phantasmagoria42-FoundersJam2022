@@ -12,6 +12,11 @@ public class MovementController : MonoBehaviour
     [SerializeField, Tooltip("The speed of the player.")]
     float _movementSpeed = 1f;
 
+    const float _maxHeight = 2.6f;
+    const float _minHeight = -4.9f;
+    const float _maxDistance = 6.3f;
+    const float _minDistance = -6.3f;
+
    /// <summary>
    /// Moves the gameobject in the desired velocity with the set movement speed.
    /// </summary>
@@ -23,9 +28,10 @@ public class MovementController : MonoBehaviour
             // Determine our new position based on the desired velocity times our movement speed and then adding our current position;
             // Use delta time so because this is called every frame and it makes it work in real time instead of frame time.
             var __moveToPosition = (__desiredVelocity * _movementSpeed * Time.deltaTime) + (Vector2)transform.position;
-
-            // Set out position to be the move to position.
-            transform.position = __moveToPosition;
+            
+            if(__moveToPosition.x < _maxDistance && __moveToPosition.x > _minDistance && __moveToPosition.y > _minHeight && __moveToPosition.y < _maxHeight)
+                // Set out position to be the move to position.
+                transform.position = __moveToPosition;
         }
     }
 }

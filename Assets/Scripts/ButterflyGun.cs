@@ -17,6 +17,9 @@ public class ButterflyGun : MonoBehaviour
     bool _canShoot;
     // The delay timer routine.
     Coroutine _delayTimerRoutine;
+    // The shoot sound.
+    [SerializeField]
+    AudioClip _shootSound;
 
     private void Start()
     {
@@ -29,7 +32,6 @@ public class ButterflyGun : MonoBehaviour
         // If we can shoot...
         if (_canShoot == true)
         {
-
             // Instaniate the prefab at the firepoint position.
             var newProjectile = Instantiate(_projectilePrefab, _firePoint.position, Quaternion.identity);
 
@@ -44,6 +46,8 @@ public class ButterflyGun : MonoBehaviour
 
             // Start the delay timer routine.
             _delayTimerRoutine = StartCoroutine( DelayTimer(_fireDelay));
+            // Play the shoot sound at the firepoint spot.
+            AudioSource.PlayClipAtPoint(_shootSound, _firePoint.position);
         }
     }
 
