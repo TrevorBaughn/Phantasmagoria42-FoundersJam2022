@@ -13,14 +13,31 @@ public class TextDisplay : MonoBehaviour
     public int debugIndex = 0;
     public int killsPerMessage = 25;
     public int messageDelay = 2000;
+    int x = 0;
     bool displayed = false;
+
+    public static T[] Shuffle<T>(T[] array)
+    {
+        var rand = new System.Random();
+
+        int n = array.Length;
+        while (n > 1) {
+            n--;
+            int k = rand.Next(n + 1);
+            T value = array[k];
+            array[k] = array[n];
+            array[n] = value;
+        }
+
+        return array;
+    }
 
     public void Load(string savedData)
     {
         JsonUtility.FromJsonOverwrite(savedData, this);
     }
 
-    public async Task DisplayIntro()
+    public async void DisplayIntro()
     {
         foreach (string text in intro)
         {
@@ -33,16 +50,19 @@ public class TextDisplay : MonoBehaviour
 
     public async void DisplayRandom()
     {
-        var rand = new System.Random();
-
-        // foreach (string text in random[rand.Next(random.Length)].Split("\\n"))
-        foreach (string text in random[debugIndex].Split("\\n"))
+        if (x == random.Length || x == 0)
+        {
+            random = Shuffle<string>(random);
+            x = 0;
+        }
+        foreach (string text in random[x].Split("\\n"))
         {
             textMesh.text = text;
             await Task.Delay(messageDelay);
         }
 
         textMesh.text = "";
+        x++;
     }
 
     public void Update()
