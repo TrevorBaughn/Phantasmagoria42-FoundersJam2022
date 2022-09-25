@@ -150,13 +150,7 @@ public class AIController : MonoBehaviour
                     // Change our state to the shooting state.
                     ChangeState(AIState.Shooting);
                 }
-                else if (_healthController != null)
-                {
-                    if (_healthController.CurrentHealth <= 0)
-                    {
-                        ChangeState(AIState.Died);
-                    }
-                }
+               
                 else
                 {
                     ChangeState(AIState.Charging);
@@ -167,6 +161,13 @@ public class AIController : MonoBehaviour
                 if (_animator != null)
                 {
                     _animator.SetBool("Diving", false);
+                }
+            }
+             else if (_healthController != null)
+            {
+                if (_healthController.CurrentHealth <= 0)
+                {
+                    ChangeState(AIState.Died);
                 }
             }
         }

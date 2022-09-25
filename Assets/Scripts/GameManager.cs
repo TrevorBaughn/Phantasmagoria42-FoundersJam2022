@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 class GameManager : MonoBehaviour
 {
@@ -52,5 +53,10 @@ class GameManager : MonoBehaviour
             else
                 _crowSpawnIndex = 0;
         }
+
+        //if(_player == null)
+        //{
+        //    SceneManager.LoadScene("TitleScreen");
+        //}
     }
 }

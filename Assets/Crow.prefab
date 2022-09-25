@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518de11570b6fed4da65277ed7086514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 8
+  _maxHealth: 5
   _deathSoundClip: {fileID: 8300000, guid: 07947ad52a2129547bb6105dbf7daf9f, type: 3}
   _delayedDeath: 1
   _deathTime: 3
