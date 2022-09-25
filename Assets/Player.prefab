@@ -179,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 15
   _deathSoundClip: {fileID: 8300000, guid: 720915ef110ac1b48b743ae31657bc44, type: 3}
+  _delayedDeath: 0
+  _deathTime: 0
 --- !u!95 &6608276242236245405
 Animator:
   serializedVersion: 4
@@ -250,3 +252,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   _deathSoundClip: {fileID: 0}
+  _delayedDeath: 1
+  _deathTime: 3

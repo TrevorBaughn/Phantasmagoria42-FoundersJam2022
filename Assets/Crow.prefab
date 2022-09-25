@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9785f46a09fe114e96803048b55e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _shootingAttackRange: 7
   _diveBombRange: 5
   _diveBombSpeed: 3.33
@@ -172,8 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518de11570b6fed4da65277ed7086514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _maxHealth: 8
   _deathSoundClip: {fileID: 8300000, guid: 07947ad52a2129547bb6105dbf7daf9f, type: 3}
+  _delayedDeath: 1
+  _deathTime: 3
 --- !u!50 &6846397839007632100
 Rigidbody2D:
   serializedVersion: 4

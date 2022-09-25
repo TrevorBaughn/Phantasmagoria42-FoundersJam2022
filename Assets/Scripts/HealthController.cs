@@ -8,13 +8,18 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     float _maxHealth;
     // The current health.
-    float _currentHealth;
+    public float CurrentHealth { get; private set; }
     [SerializeField]
     AudioClip _deathSoundClip;
+
+    [SerializeField]
+    bool _delayedDeath;
+    [SerializeField]
+    float _deathTime;
     
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        CurrentHealth = _maxHealth;
     }
 
     /// <summary>
@@ -24,26 +29,33 @@ public class HealthController : MonoBehaviour
     public void TakeDamage(float __damageToTake)
     {
         // Subtracts the current health by the damage to take.
-        _currentHealth -= __damageToTake;
+        CurrentHealth -= __damageToTake;
         // If the current health is less than or equal to...
-        if(_currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             // Call the die function.
-            Die();
+            StartCoroutine( Die());
         }
 
     }
     /// <summary>
     /// Handles the death functionality.
     /// </summary>
-    void Die()
+    IEnumerator Die()
     {
+        var __time = _deathTime;
         if(TryGetComponent<AudioSource>(out AudioSource audioSource))
         {
             audioSource.Stop();
         }
 
         AudioSource.PlayClipAtPoint(_deathSoundClip, transform.position);
+
+        do
+        {
+            __time -= Time.deltaTime;
+            yield return null;
+        }while (__time > 0) ;
 
         // Destroys this game object.
         Destroy(this.gameObject);
@@ -56,8 +68,8 @@ public class HealthController : MonoBehaviour
     public void Heal(float __healthToHeal)
     {
         // Adds the health to heal to the current health.
-        _currentHealth += __healthToHeal;
+        CurrentHealth += __healthToHeal;
         // Clamp the current health so it's value stays between 0 and the set max health. Prevents overhealing.
-        _currentHealth = Mathf.Clamp(__healthToHeal, 0, _maxHealth);
+        CurrentHealth = Mathf.Clamp(__healthToHeal, 0, _maxHealth);
     }
 }

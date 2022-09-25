@@ -28,7 +28,9 @@ public class AIController : MonoBehaviour
     MovementController _movementController;
     ButterflyGun _gun;
     AudioSource _audioSource;
+    HealthController _healthController;
     Vector3 _diveToPosition;
+    Animator _animator;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +38,8 @@ public class AIController : MonoBehaviour
         TryGetComponent<MovementController>(out _movementController);
         TryGetComponent<ButterflyGun>(out _gun);
         TryGetComponent<AudioSource>(out _audioSource);
+        TryGetComponent<HealthController>(out _healthController);
+        TryGetComponent<Animator>(out _animator);
     }
 
     // Update is called once per frame
@@ -70,6 +74,13 @@ public class AIController : MonoBehaviour
                 // Change our state to the shooting state.
                 ChangeState(AIState.Shooting);
             }
+            else if (_healthController != null)
+            {
+                if (_healthController.CurrentHealth <= 0)
+                {
+                    ChangeState(AIState.Died);
+                }
+            }
             else
             {
                 ChangeState(AIState.Charging);
@@ -99,11 +110,22 @@ public class AIController : MonoBehaviour
                 // Change our state to the shooting state.
                 ChangeState(AIState.Shooting);
             }
+            else if (_healthController != null)
+            {
+                if (_healthController.CurrentHealth <= 0)
+                {
+                    ChangeState(AIState.Died);
+                }
+            }
 
         }
         // If we're Divebombing...
         else if (_currentState == AIState.Divebombing)
         {
+            if(_animator != null)
+            {
+                _animator.SetBool("Diving", true);
+            }
             // If we have an audio source...
             if (_audioSource != null)
             {
@@ -128,12 +150,24 @@ public class AIController : MonoBehaviour
                     // Change our state to the shooting state.
                     ChangeState(AIState.Shooting);
                 }
+                else if (_healthController != null)
+                {
+                    if (_healthController.CurrentHealth <= 0)
+                    {
+                        ChangeState(AIState.Died);
+                    }
+                }
                 else
                 {
                     ChangeState(AIState.Charging);
                 }
+
                 if (_audioSource != null)
                     _audioSource.Stop();
+                if (_animator != null)
+                {
+                    _animator.SetBool("Diving", false);
+                }
             }
         }
         // If we're shooting...
@@ -142,7 +176,7 @@ public class AIController : MonoBehaviour
             if (_gun != null)
             {
                 // Calculate the fire direction.
-                var __fireDirection = PlayerTransform.position - transform.position;
+                var __fireDirection = PlayerTransform.position - _gun.Firepoint.position;
                 // Shoot at the player's direction.
                 _gun.Shoot(__fireDirection);
             }
@@ -157,11 +191,26 @@ public class AIController : MonoBehaviour
             {
                 ChangeState(AIState.Charging);
             }
+            else if(_healthController!= null)
+            {
+                if(_healthController.CurrentHealth <= 0)
+                {
+                    ChangeState(AIState.Died);
+                }
+            }
         }
         // If we're dying...
         else if (_currentState == AIState.Died)
         {
-
+            if(TryGetComponent<CircleCollider2D>(out CircleCollider2D circleCollider2D))
+            {
+                circleCollider2D.enabled = false;
+            }
+            if (_animator != null)
+            {
+                _animator.SetTrigger("Die");
+            }
+            _movementController.Move(-transform.up);
         }
         // If we don't know what state we're in...
         else

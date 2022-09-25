@@ -8,6 +8,7 @@ public class ButterflyGun : MonoBehaviour
     [SerializeField]
     Projectile _projectilePrefab;
     // The spot to spawn our bullets to shoot from.
+    public Transform Firepoint => _firePoint;
     [SerializeField]
     Transform _firePoint;
     // The time delay between shots.
