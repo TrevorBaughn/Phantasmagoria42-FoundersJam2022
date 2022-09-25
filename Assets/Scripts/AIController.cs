@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField]
-    Transform _playerTransform;
+    public Transform PlayerTransform;
 
     public enum AIState { Idle, Divebombing, Died, Charging, Shooting };
 
@@ -43,7 +42,7 @@ public class AIController : MonoBehaviour
     void Update()
     {
         // If the player is to the left of the crow...
-        if (_playerTransform.position.x < transform.position.x)
+        if (PlayerTransform.position.x < transform.position.x)
             transform.rotation = Quaternion.Euler(0, 0, 0);
         // If the player is to the right of the crow...
         else
@@ -59,14 +58,14 @@ public class AIController : MonoBehaviour
         {
             // Do nothing.
             // If the distance from the player to this crow is within the divebomb range...
-            if (Vector2.Distance(_playerTransform.position, transform.position) <= _diveBombRange)
+            if (Vector2.Distance(PlayerTransform.position, transform.position) <= _diveBombRange)
             {
-                _diveToPosition = _playerTransform.position;
+                _diveToPosition = PlayerTransform.position;
                 // Change our state to the dive bombing.
                 ChangeState(AIState.Divebombing);
             }
             // Else, if our distance from the player to this crow is within the shooting range...
-            else if (Vector2.Distance(_playerTransform.position, transform.position) <= _shootingAttackRange)
+            else if (Vector2.Distance(PlayerTransform.position, transform.position) <= _shootingAttackRange)
             {
                 // Change our state to the shooting state.
                 ChangeState(AIState.Shooting);
@@ -83,19 +82,19 @@ public class AIController : MonoBehaviour
             if (_movementController != null)
             {
                 // Calculate the movement direction.
-                var __moveToDirection = _playerTransform.position - transform.position;
+                var __moveToDirection = PlayerTransform.position - transform.position;
                 // Move in that direction.
                 _movementController.Move((Vector2)__moveToDirection);
             }
             // If the distance from the player to this crow is within the divebomb range...
-            if (Vector2.Distance(_playerTransform.position, transform.position) <= _diveBombRange)
+            if (Vector2.Distance(PlayerTransform.position, transform.position) <= _diveBombRange)
             {
-                _diveToPosition = _playerTransform.position;
+                _diveToPosition = PlayerTransform.position;
                 // Change our state to the dive bombing.
                 ChangeState(AIState.Divebombing);
             }
             // Else, if our distance from the player to this crow is within the shooting range...
-            else if (Vector2.Distance(_playerTransform.position, transform.position) <= _shootingAttackRange)
+            else if (Vector2.Distance(PlayerTransform.position, transform.position) <= _shootingAttackRange)
             {
                 // Change our state to the shooting state.
                 ChangeState(AIState.Shooting);
@@ -124,7 +123,7 @@ public class AIController : MonoBehaviour
             if (Vector3.Distance(transform.position, _diveToPosition) < .8f)
             {
                 // If our distance from the player to this crow is within the shooting range...
-                if (Vector2.Distance(_playerTransform.position, transform.position) <= _shootingAttackRange)
+                if (Vector2.Distance(PlayerTransform.position, transform.position) <= _shootingAttackRange)
                 {
                     // Change our state to the shooting state.
                     ChangeState(AIState.Shooting);
@@ -143,18 +142,18 @@ public class AIController : MonoBehaviour
             if (_gun != null)
             {
                 // Calculate the fire direction.
-                var __fireDirection = _playerTransform.position - transform.position;
+                var __fireDirection = PlayerTransform.position - transform.position;
                 // Shoot at the player's direction.
                 _gun.Shoot(__fireDirection);
             }
             // If our distance from the player to this crow is within the dive bomb range...
-            if (Vector2.Distance(_playerTransform.position, transform.position) <= _diveBombRange)
+            if (Vector2.Distance(PlayerTransform.position, transform.position) <= _diveBombRange)
             {
-                _diveToPosition = _playerTransform.position;
+                _diveToPosition = PlayerTransform.position;
                 // Change our state to the shooting state.
                 ChangeState(AIState.Divebombing);
             }
-            else if(Vector2.Distance(_playerTransform.position, transform.position) >= _shootingAttackRange)
+            else if(Vector2.Distance(PlayerTransform.position, transform.position) >= _shootingAttackRange)
             {
                 ChangeState(AIState.Charging);
             }
@@ -200,5 +199,10 @@ public class AIController : MonoBehaviour
                 __playerHealthController.TakeDamage(_diveBombDamage);
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.Crows.Remove(this);
     }
 }
