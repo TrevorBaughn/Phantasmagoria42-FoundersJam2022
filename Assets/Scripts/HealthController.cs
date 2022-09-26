@@ -56,6 +56,8 @@ public class HealthController : MonoBehaviour
             audioSource.Stop();
         }
 
+        GameManager.instance.kills++;
+
         AudioSource.PlayClipAtPoint(_deathSoundClip, transform.position);
 
         do

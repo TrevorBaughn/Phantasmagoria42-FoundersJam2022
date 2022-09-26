@@ -15,6 +15,7 @@ public class TextDisplay : MonoBehaviour
     public int messageDelay = 3500;
     int x = 0;
     bool displayed = false;
+    bool introDone = false;
 
     public static T[] Shuffle<T>(T[] array)
     {
@@ -44,23 +45,28 @@ public class TextDisplay : MonoBehaviour
             textMesh.text = text;
             await Task.Delay(messageDelay);
         }
+
+        introDone = true;
     }
 
     public async void DisplayRandom()
     {
-        if (x == random.Length || x == 0)
+        if (introDone)
         {
-            random = Shuffle<string>(random);
-            x = 0;
-        }
+            if (x == random.Length || x == 0)
+            {
+                random = Shuffle<string>(random);
+                x = 0;
+            }
 
-        foreach (string text in random[x].Split("\\n"))
-        {
-            textMesh.text = text;
-            await Task.Delay(messageDelay);
-        }
+            foreach (string text in random[x].Split("\\n"))
+            {
+                textMesh.text = text;
+                await Task.Delay(messageDelay);
+            }
 
-        x++;
+            x++;
+        }
     }
 
     public void Update()
