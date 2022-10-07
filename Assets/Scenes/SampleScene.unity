@@ -391,9 +391,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.0058365823
+    x: 0
     y: 0
-    width: 1.0116732
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -472,12 +472,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad45bd2146335004eaa096845b8f3c2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d8aea7525c72434ba0f2dbdec9d403f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _previewInEditMode: 1
-  _maskColor: {r: 0, g: 0, b: 0, a: 1}
-  _aspectRatio: 1.25
 --- !u!224 &562989619 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9189219974673684672, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
@@ -813,7 +810,7 @@ GameObject:
   - component: {fileID: 1088061568}
   - component: {fileID: 1088061567}
   - component: {fileID: 1088061566}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1364,12 +1361,48 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684673, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 9189219974673684684, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684684, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684684, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974673684686, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974983569910, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189219974983569910, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff4df88c280db64aa5091c61d15a687, type: 3}
